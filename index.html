@@ -1,123 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sizwe Ndzinisa | Software Development Student</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        header h1 {
-            margin-bottom: 5px;
-        }
-        header p {
-            font-size: 1.1em;
-            color: #555;
-        }
-        section {
-            margin-bottom: 35px;
-        }
-        h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
-        .project {
-            background: #fff;
-            padding: 20px;
-            margin-top: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sizwe Ndzinisa Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #1a73e8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    h2 {
+      color: #1a73e8;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .project {
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #155ab6;
+    }
+  </style>
 </head>
-
 <body>
-<div class="container">
 
-    <header>
-        <h1>Sizwe Ndzinisa</h1>
-        <p>Second-Year Software Development Student | IT & Systems Support Intern</p>
-        <p>
-            <a href="https://github.com/st1027980" target="_blank">GitHub</a>
-        </p>
-    </header>
+<header>
+  <h1>Sizwe Ndzinisa</h1>
+  <p>Second-Year Software Development Student | Part-Time/Internship Roles</p>
+</header>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I am a second-year Software Development student seeking a part-time or internship role
-            in an office-based IT or technical support environment. I am particularly interested in
-            systems, databases, and how technology supports daily business and security operations.
-        </p>
-    </section>
+<section>
+  <h2>About Me</h2>
+  <p>Hi! I'm Sizwe, a second-year Software Development student. I love building web applications, databases, and role-based systems. This portfolio showcases some of my projects.</p>
+</section>
 
-    <section>
-        <h2>Projects</h2>
+<section>
+  <h2>Projects</h2>
 
-        <div class="project">
-            <h3>Role-Based Login System</h3>
-            <p>
-                A secure login system with user roles and access permissions. Includes form validation
-                and session control.
-            </p>
-            <a href="https://st1027980.github.io/role-based-login-system/" target="_blank">
-                View Project
-            </a>
-        </div>
+  <div class="project">
+    <h3>Role-Based Login System</h3>
+    <p>Secure login system with role permissions.</p>
+    <p>Try the demo login:</p>
+    <ul>
+      <li>Email: <strong>demo@example.com</strong></li>
+      <li>Password: <strong>Demo123</strong></li>
+    </ul>
+    <input type="email" id="email" placeholder="Enter email">
+    <input type="password" id="password" placeholder="Enter password">
+    <button type="button" onclick="login()">Login</button>
+    <p><a href="https://github.com/ST1027980/role-based-login-system" target="_blank">View Project on GitHub</a></p>
+  </div>
 
-        <div class="project">
-            <h3>Database-Driven Application</h3>
-            <p>
-                Designed and implemented normalized databases with SQL queries and reports for
-                operational use.
-            </p>
-            <a href="https://github.com/st1027980" target="_blank">
-                View on GitHub
-            </a>
-        </div>
+  <div class="project">
+    <h3>Database-Driven Application</h3>
+    <p>Designed normalized databases and SQL reports for efficient data management.</p>
+    <p><a href="https://github.com/ST1027980/your-db-project" target="_blank">View Project on GitHub</a></p>
+  </div>
 
-        <div class="project">
-            <h3>Web Forms & Validation</h3>
-            <p>
-                Built HTML forms with JavaScript validation focused on accuracy and usability.
-            </p>
-            <a href="https://github.com/st1027980" target="_blank">
-                View on GitHub
-            </a>
-        </div>
+  <div class="project">
+    <h3>Web Forms & Validation</h3>
+    <p>Built user-friendly forms with HTML, CSS, and JavaScript validation.</p>
+    <p><a href="https://github.com/ST1027980/your-web-forms-project" target="_blank">View Project on GitHub</a></p>
+  </div>
+</section>
 
-    </section>
+<section>
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML, CSS, JavaScript, SQL</li>
+    <li>Database Design & Normalization</li>
+    <li>Role-Based Authentication Systems</li>
+    <li>GitHub & Visual Studio Code</li>
+    <li>System Documentation & Troubleshooting</li>
+  </ul>
+</section>
 
-    <footer>
-        © 2025 Sizwe Ndzinisa
-    </footer>
+<script>
+  const demoUser = {
+    email: "demo@example.com",
+    password: "Demo123"
+  };
 
-</div>
+  function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if(email === demoUser.email && password === demoUser.password){
+      alert("Login successful! Welcome to the system.");
+    } else {
+      alert("Invalid login credentials.");
+    }
+  }
+</script>
+
 </body>
-  </html>
+</html>
