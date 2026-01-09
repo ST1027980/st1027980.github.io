@@ -1,23 +1,21 @@
+/* RESET & BASE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body {
-    background-color: red;
-}
 
 body {
-    line-height: 1.6;
     background-color: #f4f6f8;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Header */
+/* HEADER */
 header {
     background: #0a2540;
-    color: #fff;
+    color: #ffffff;
     padding: 20px;
 }
 
@@ -28,10 +26,11 @@ header h1 {
 nav {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
@@ -40,38 +39,52 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Sections */
+/* SECTIONS */
 section {
-    padding: 60px 20px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
+    padding: 60px 20px;
 }
 
+section h2 {
+    margin-bottom: 20px;
+    color: #0a2540;
+}
+
+/* HERO */
 #home {
     text-align: center;
 }
 
 #home h2 {
+    font-size: 2.2rem;
     margin-bottom: 15px;
-    font-size: 2rem;
 }
 
-#services ul {
-    list-style: disc;
-    margin-left: 20px;
+#home p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
 }
+
+/* SERVICES */
 .service-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
     margin-top: 30px;
 }
 
 .card {
-    background: #fff;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card h3 {
@@ -79,45 +92,60 @@ section {
     color: #0a2540;
 }
 
-/* Contact Form */
+/* ABOUT */
+#about p {
+    max-width: 800px;
+}
+
+/* CONTACT */
 form {
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 400px;
 }
 
-input, textarea {
-    padding: 10px;
+input,
+textarea {
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button {
-    padding: 10px;
-    border: none;
+    padding: 12px;
     background: #0a2540;
-    color: #fff;
-    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 button:hover {
     background: #123b63;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     background: #0a2540;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 20px;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
+    }
+
+    #home h2 {
+        font-size: 1.8rem;
     }
 
     section {
