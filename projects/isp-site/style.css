@@ -87,3 +87,12 @@ section.visible {
     opacity: 1;
     transform: translateY(0);
 }
+/* HERO ANIMATION */
+.hero h2 {
+    animation: heroFade 2s ease forwards;
+}
+
+@keyframes heroFade {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
