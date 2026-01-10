@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STYLES AND CUTS</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #000; /* dark black background */
+    color: #fff; /* text color */
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffcc00; /* accent color for headings */
+  }
+
+  .card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+
+  button {
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background: #e6b800;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 1px solid #fff;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>STYLES AND CUTS</h1>
+
+  <div class="card">
+    <h3>Book a haircut</h3>
+    <label>Customer Name: <input type="text" id="customerName"></label><br><br>
+    <label>Booking Date: <input type="date" id="bookingDate"></label><br><br>
+    <label>Service: 
+      <select id="service">
+        <option value="50">Chiskop - R50</option>
+        <option value="80">Normal Cut - R80</option>
+        <option value="140">Cut and Dye - R140</option>
+      </select>
+    </label><br><br>
+    <label>Monthly Visits: <input type="number" id="visits" min="1" value="1"></label><br><br>
+    <button onclick="addBooking()">Book & Pay</button>
+  </div>
+
+  <h3>Admin Revenue Dashboard</h3>
+  <table id="dashboard">
+    <tr>
+      <th>Customer</th>
+      <th>Date</th>
+      <th>Service</th>
+      <th>Visits</th>
+      <th>Total (R)</th>
+    </tr>
+  </table>
+
+  <h3>Total Revenue: R<span id="totalRevenue">0</span></h3>
+</div>
+
+<script>
+let totalRevenue = 0;
+
+function addBooking() {
+  const name = document.getElementById('customerName').value;
+  const date = document.getElementById('bookingDate').value;
+  const service = document.getElementById('service');
+  const serviceName = service.options[service.selectedIndex].text.split(" - ")[0];
+  const price = parseInt(service.value);
+  const visits = parseInt(document.getElementById('visits').value);
+  const total = price * visits;
+
+  // Add to dashboard
+  const table = document.getElementById('dashboard');
+  const row = table.insertRow();
+  row.insertCell(0).innerText = name;
+  row.insertCell(1).innerText = date;
+  row.insertCell(2).innerText = serviceName;
+  row.insertCell(3).innerText = visits;
+  row.insertCell(4).innerText = total;
+
+  // Update total revenue
+  totalRevenue += total;
+  document.getElementById('totalRevenue').innerText = total;
+
+  alert(`Payment simulated! Total: R${total}`);
+}
+</script>
+
+</body>
+</html>
