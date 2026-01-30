@@ -1,130 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sizwe Ndzinisa Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
-    header { background: #1a73e8; color: white; padding: 30px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2em; }
-    header p { margin: 5px 0 0; font-size: 1em; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sizwe Ndzinisa | Software Developer</title>
 
-    section { padding: 30px 20px; max-width: 800px; margin: 20px auto; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
-    h2 { color: #1a73e8; margin-top: 0; }
-    a { color: #1a73e8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .project { margin-bottom: 30px; }
-    input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; border-radius: 5px; border: 1px solid #ccc; }
-    button { background: #1a73e8; color: white; border: none; cursor: pointer; transition: background 0.3s; }
-    button:hover { background: #155ab6; }
-    ul { padding-left: 20px; }
-    .contact a { display: inline-block; margin-right: 15px; }
-  </style>
-  <link rel="stylesheet" href="style.css">
+<style>
+/* ---------- GLOBAL ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero {
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 20px 0 30px;
+  color: #ccc;
+}
+
+.hero .cta {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero .cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(79,172,254,0.6);
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- GLASS CARD ---------- */
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(79,172,254,0.25);
+}
+
+/* ---------- ABOUT ---------- */
+.about p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+/* ---------- PROJECTS ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #4facfe;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- DEMO LOGIN ---------- */
+.demo-login input,
+.demo-login button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.demo-login input {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.demo-login button {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.demo-login button:hover {
+  box-shadow: 0 0 20px rgba(79,172,254,0.6);
+}
+
+/* ---------- SKILLS ---------- */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill {
+  padding: 10px 16px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+}
+
+/* ---------- CONTACT ---------- */
+.contact-links a {
+  margin-right: 20px;
+  color: #4facfe;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #777;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Sizwe Ndzinisa</h1>
-  <p>Second-Year Software Development Student | Part-Time/Internship Roles</p>
+  <div class="hero">
+    <h1>Sizwe Ndzinisa</h1>
+    <p>Second-Year Software Development Student • Future Full-Stack Engineer</p>
+    <a href="#projects" class="cta">Explore My Work</a>
+  </div>
 </header>
 
-<section>
+<section class="about">
   <h2>About Me</h2>
-  <p>Hi! I'm Sizwe, a second-year Software Development student. I enjoy building web applications, databases, and role-based systems. This portfolio showcases my projects, skills, and demo systems for recruiters to try.</p>
+  <div class="card">
+    <p>
+      I’m a second-year Software Development student who builds real-world systems — 
+      from role-based authentication platforms to booking and management systems.
+      I focus on clean architecture, usability, and scalable logic.
+    </p>
+  </div>
 </section>
 
-<section>
-  <h2>Projects</h2>
-
-  <div class="project">
-    <h3>Role-Based Login System</h3>
-    <p>Secure login system with role permissions.</p>
-    <p>Demo login credentials:</p>
-    <ul>
-      <li>Email: <strong>demo@example.com</strong></li>
-      <li>Password: <strong>Demo123</strong></li>
-    </ul>
-    <input type="email" id="email" placeholder="Enter email">
-    <input type="password" id="password" placeholder="Enter password">
-    <button type="button" onclick="login()">Login</button>
-    <p><a href="https://github.com/ST1027980/role-based-login-system" target="_blank">View Project on GitHub</a></p>
-  </div>
-
-  <div class="project">
-    <h3>Appointment Booking System</h3>
-    <p>System that allows users to book appointments, track schedules, and manage staff availability.</p>
-    <p>
-      <a href="https://ST1027980.github.io/appointment-booking-system/" target="_blank">View Live Project (if deployable)</a><br>
-      <a href="https://github.com/ST1027980/appointment-booking-system" target="_blank">View GitHub Repo</a>
-    </p>
-  </div>
-
-  <div class="project">
-    <h3>Taxpayer Management System</h3>
-    <p>System for managing taxpayer data, including registration, payments, and reporting.</p>
-    <p>
-      <a href="https://ST1027980.github.io/taxpayer-management-system/" target="_blank">View Live Project (if deployable)</a><br>
-      <a href="https://github.com/ST1027980/taxpayer-management-system" target="_blank">View GitHub Repo</a>
-    </p>
-  </div>
 <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project-cards">
-        <!-- ISP Site Project Card -->
-        <div class="project-card">
-            <h3>Niche ISP Website</h3>
-            <p>A clean, professional landing page for a niche internet service provider. Responsive, with animated sections and interactive service cards.</p>
-            <a href="projects/isp-site/index.html" target="_blank" class="project-btn">View Project</a>
-        </div>
-      <section id="projects">
-  <div class="project-cards">
-    <!-- Other project cards -->
-    <div class="project-card">
-      <h3>STYLES AND CUTS</h3>
-      <p>Booking & subscription system demo for a barbershop. Features haircut pricing, monthly subscriptions, simulated PayFast payments, and admin revenue dashboard.</p>
-      <a href="styles-and-cuts/" target="_blank">View Live Demo</a>
+  <h2>Selected Projects</h2>
+
+  <div class="projects-grid">
+
+    <div class="card project-card">
+      <h3>Role-Based Login System</h3>
+      <p>Secure authentication system with user roles and permissions.</p>
+
+      <div class="demo-login">
+        <input type="email" id="email" placeholder="demo@example.com">
+        <input type="password" id="password" placeholder="Demo123">
+        <button onclick="login()">Try Demo Login</button>
+      </div>
+
+      <a href="https://github.com/ST1027980/role-based-login-system" target="_blank">
+        View on GitHub →
+      </a>
     </div>
+
+    <div class="card project-card">
+      <h3>Appointment Booking System</h3>
+      <p>Booking platform with scheduling, staff management, and availability logic.</p>
+      <a href="https://ST1027980.github.io/appointment-booking-system/" target="_blank">
+        Live Demo →
+      </a>
+      <a href="https://github.com/ST1027980/appointment-booking-system" target="_blank">
+        GitHub →
+      </a>
+    </div>
+
+    <div class="card project-card">
+      <h3>STYLES & CUTS</h3>
+      <p>Barbershop booking & subscription system with simulated online payments and admin dashboard.</p>
+      <a href="styles-and-cuts/" target="_blank">
+        Live Demo →
+      </a>
+    </div>
+
   </div>
-    
 </section>
 
 <section>
-  <h2>Skills</h2>
-  <ul>
-    <li>HTML, CSS, JavaScript, SQL</li>
-    <li>Database Design & Normalization</li>
-    <li>Role-Based Authentication Systems</li>
-    <li>GitHub & Visual Studio Code</li>
-    <li>System Documentation & Troubleshooting</li>
-  </ul>
+  <h2>Skills & Tools</h2>
+  <div class="card skills-list">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Database Design</div>
+    <div class="skill">Normalization</div>
+    <div class="skill">Authentication Systems</div>
+    <div class="skill">GitHub</div>
+    <div class="skill">VS Code</div>
+  </div>
 </section>
 
-<section class="contact">
-  <h2>Contact Me</h2>
-  <p>Feel free to reach out for internships or part-time opportunities:</p>
-  <p>
+<section>
+  <h2>Contact</h2>
+  <div class="card contact-links">
     <a href="mailto:ndzinisasizwe41@gmail.com">Email</a>
     <a href="https://github.com/ST1027980" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">LinkedIn</a>
-  </p>
+  </div>
 </section>
 
+<footer>
+  © 2026 • Built by Sizwe Ndzinisa
+</footer>
+
 <script>
-  const demoUser = { email: "demo@example.com", password: "Demo123" };
+const demoUser = {
+  email: "demo@example.com",
+  password: "Demo123"
+};
 
-  function login() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-    if(email === demoUser.email && password === demoUser.password){
-      alert("Login successful! Welcome to the system.");
-    } else {
-      alert("Invalid login credentials.");
-    }
+  if (email === demoUser.email && password === demoUser.password) {
+    alert("Login successful! 🚀");
+  } else {
+    alert("Invalid credentials ❌");
   }
+}
 </script>
 
 </body>
-</html>    
+</html>
